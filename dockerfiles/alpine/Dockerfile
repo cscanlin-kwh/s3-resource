@@ -1,4 +1,4 @@
-ARG base_image=alpine:latest
+ARG BASE_IMAGE=alpine:latest
 ARG builder_image=concourse/golang-builder
 
 FROM ${builder_image} as builder
@@ -13,7 +13,7 @@ RUN set -e; for pkg in $(go list ./...); do \
 		go test -o "/tests/$(basename $pkg).test" -c $pkg; \
 	done
 
-FROM ${base_image} AS resource
+FROM ${BASE_IMAGE} AS resource
 RUN apk update && apk upgrade
 RUN apk add --no-cache bash tzdata ca-certificates unzip zip gzip tar
 COPY --from=builder assets/ /opt/resource/
