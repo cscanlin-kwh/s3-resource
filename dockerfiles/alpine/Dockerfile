@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=alpine:latest
-ARG builder_image=concourse/golang-builder
+ARG BASE_IMAGE=public.ecr.aws/docker/library/alpine:latest
+ARG builder_image=657285219065.dkr.ecr.us-west-2.amazonaws.com/concourse/golang-builder
 
 FROM ${builder_image} as builder
 COPY . /go/src/github.com/concourse/s3-resource
