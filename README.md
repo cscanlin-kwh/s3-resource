@@ -7,8 +7,7 @@ version numbers.
 
 * `bucket`: *Required.* The name of the bucket.
 
-* `access_key_id`: *Optional.* The AWS access key to use when accessing the
-  bucket.
+* `access_key_id`: *Optional.* The AWS access key to use when accessing the bucket.
 
 * `secret_access_key`: *Optional.* The AWS secret key to use when accessing
   the bucket.
